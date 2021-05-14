@@ -1,0 +1,8 @@
+p + .main {
+    color: red;
+}
+
+p ~ div {
+    background-color: blue;
+}
+
