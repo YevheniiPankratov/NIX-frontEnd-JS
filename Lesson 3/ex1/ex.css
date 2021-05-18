@@ -1,0 +1,26 @@
+body {
+    font-weight: bold;
+    line-height: 2.3rem;
+    font-size: 1rem;
+    background-image: url(https://image.freepik.com/free-vector/white-abstract-background-theme_23-2148830884.jpg);
+}
+
+h1 {
+    color: #101edd;
+}
+
+h2 {
+    color: red;
+}
+
+h3 {
+    color: rgb(92, 30, 22)
+}
+
+p {
+    color: hsl(144, 90%, 25%)
+}
+
+span {
+    color: rgba(42, 22, 133, 0.7);
+}
