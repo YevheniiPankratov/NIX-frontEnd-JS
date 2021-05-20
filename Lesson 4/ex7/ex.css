@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .one div,
+  .two div {
+    border: 2px solid black;
+    padding: 5px;
+  }
+  
+  div:nth-child(odd) {
+    float: left;
+  }
+  
+  div:nth-child(even) {
+    float: right;
+  }
+  
+  .one {
+    display: inline-block;
+  }

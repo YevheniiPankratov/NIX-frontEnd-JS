@@ -1,0 +1,14 @@
+.red {
+    background-color: red;
+  }
+  
+  .div1 {
+    float: left;
+    width: 30%;
+  }
+  
+  .div2,
+  .div3 {
+    float: right;
+    width: 35%;
+  }

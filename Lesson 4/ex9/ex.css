@@ -1,0 +1,14 @@
+.list {
+    width: 25%;
+    list-style: none;
+  }
+  
+.list.second {
+    display: none;
+    background-color: red;
+    text-align: right;
+  }
+  
+.hover:hover .second {
+    display: block;
+  }

@@ -1,0 +1,38 @@
+  div {
+    color: #ffffff;
+  }
+  
+  .div1 {
+    float: left;
+    width: 25%;
+  }
+  
+  .div2 {
+    float: left;
+    width: 75%;
+  }
+  
+  .div3 {
+    float: right;
+    width: 40%;
+  }
+  
+  .div4 {
+    float: left;
+    width: 60%;
+  }
+  
+  .div5 {
+    float: right;
+    width: 25%;
+  }
+  
+  .div6 {
+    float: left;
+    width: 25%;
+  }
+  
+  .div7 {
+    float: right;
+    width: 50%;
+  }
