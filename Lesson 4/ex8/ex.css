@@ -20,8 +20,8 @@ div {
   position: absolute;
   left: 108px;
   background-color: blue;
-  height: 92px;
-  /* Если криво, то закоментировать строчку с высотой выше. */
+  /* height: 92px; */
+  /* Если криво, то убрать комментарий  выше. */
 }
 
 .black {
