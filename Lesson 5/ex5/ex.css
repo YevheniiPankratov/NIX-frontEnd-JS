@@ -1,0 +1,38 @@
+.wrapper {
+  width: 400px;
+  height: 130px;
+  padding: 5px;
+  margin-left: 30px;
+  border: 1px solid black;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+
+}
+
+.wrapper div {
+  width: 150px;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.item1 {
+  order: 2;
+}
+
+.item2 {
+  order: 5;
+}
+
+.item3 {
+  order: 3;
+}
+
+.item4 {
+  order: 4;
+}
+
+.item5 {
+  order: 1;
+}

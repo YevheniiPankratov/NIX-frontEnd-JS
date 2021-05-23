@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #000;
+  height: 200px;
+  width: 600px;
+}
+
+.item {
+  border: 1px solid #000;
+  margin: 20px;
+}
+
+.item1 {
+  align-self: flex-end;
+}
+
+.item2 {
+  align-self: center;
+}
+
+.item3 {
+  align-self: flex-start;
+}
+
+.item4 {
+  order: 1;
+  align-self: flex-end;
+}
+
+.item5 {
+  align-self: center;
+}
