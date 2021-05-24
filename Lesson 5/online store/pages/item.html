@@ -5,29 +5,266 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="categories-items.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Item</title>
 </head>
 <body>
     <nav>
         <a href="../index.html" class="nav-title">
-            Techno store
+            Techno store <i class="fab fa-phoenix-squadron"></i>
         </a>
         <ul>
-            <li><a href="category.html">Category</a></li>
+            <li><a href="categories.html">Сategories</a></li>
             <li><a href="shop-cart.html">Cart</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
     </nav>
     <main>
-        <div class="container">
+        <div class="container-list">
+            <div class="product-card-box">
+                <div class="product-some-img">
+                    <div class="photos">
+                        <picture class="pic">
+                            <img src="https://tehnoezh.ua/upload/resize_cache/iblock/cc6/50_50_1/cc602a58aa5f984c4d8d59b7ac08bf37.webp" alt="ph">
+                        </picture>
+                        <picture class="pic">
+                            <img src="https://tehnoezh.ua/upload/resize_cache/iblock/0e0/50_50_1/0e02c0c908994a439e4788086119bc9a.webp" alt="ph">
+                        </picture>
+                        <picture class="pic">
+                            <img src="https://tehnoezh.ua/upload/resize_cache/iblock/e4b/50_50_1/e4b8dbc8cd38ebf22fce420d9e5f82e8.webp" alt="ph">
+                        </picture>
+                        <picture class="pic">
+                            <img src="https://tehnoezh.ua/upload/resize_cache/iblock/3dd/50_50_1/3ddc4b491ee1cf1fe290994672350b9c.webp" alt="ph">
+                        </picture>
+                    </div>
+                    <div class="main-photo">
+                        <picture>
+                            <img src="https://tehnoezh.ua/upload/iblock/cc6/cc602a58aa5f984c4d8d59b7ac08bf37.webp" alt="ph">
+                        </picture>
+                    </div>
+                </div>
 
+                <div class="product-info-section">
+                    <div class="product-title-name">
+                        <h2>Apple iPhone 12 Pro 256 Gb Pacific Blue</h2>
+                    </div>
+                    <div class="product-info-row">
+                        <div class="product-vendor-code">
+                            Code : MGMT3/61672
+                        </div>
+                        <div class="stars-reviews">
+                            <div class="stars-block">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="#">
+                                22 reviews
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-parameter-row">
+                        <div class="product-parameter-item">
+                            <div class="product-parameter-title">
+                                <div class="product-parameter-title-name">Color:</div>
+                                <div class="product-parameter-value">
+                                    <div class="value-item">
+                                        <a href="#">
+                                            <span class="zol"></span>
+                                        </a>
+                                    </div>
+                                    <div class="value-item">
+                                        <a href="#">
+                                            <span class="wh"></span>
+                                        </a>
+                                    </div>
+                                    <div class="value-item">
+                                        <a href="#">
+                                            <span class="black"></span>
+                                        </a>
+                                    </div>
+                                    <div class="value-item active">
+                                        <a href="#">
+                                            <span class="blue"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-parameter-item">
+                            <div class="product-parameter-title-name">Capacity:</div>
+                            <div class="product-parameter-value">
+                                <div class="value-item-vol">
+                                   <a href="#">
+                                    128 GB
+                                   </a> 
+                                </div>
+                                <div class="value-item-vol active">
+                                    <a href="#">
+                                     256 GB
+                                    </a> 
+                                 </div>
+                                 <div class="value-item-vol">
+                                    <a href="#">
+                                     512 GB
+                                    </a> 
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-old">
+                            <span>$1500</span>
+                            <strong class="discount-percent">-7%</strong>
+                        discount
+                        <strong class="discount-price">$100</strong>
+                        </div>
+                        <div class="price">
+                            <span>1400$</span>
+                        </div>
+                    </div>
+                    <div class="main-button-container">
+                        <a href="shop-cart.html" class="buy-btn">
+                            <span>Buy</span>
+                            <i class="fas fa-shopping-cart"></i>
+                            
+                        </a>
+                        <a href="shop-cart.html">
+                            <span class="credit">Buy to credit</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="description-column">
+
+                <div class="about-product-titles">
+                    <a href="#about-product">About product</a>
+                    <a href="#characteristics">Characteristics</a>
+                    <a href="#feedback">Feedback & Questions</a>
+                </div>
+
+                <div id="about-product" class="about-product">
+                    <h2>What is Apple iPhone 12 Pro 256 Gb Pacific Blue?</h2>
+                    <picture><img src="https://i.citrus.ua/imgcache/size_500/uploads/shop/9/0/90489e054181efbba44c6371e40c9c69.jpg" alt="ph"></picture>
+                    <p>A new era in the world of mobile technology has arrived. 5G support, incredible cameras, a keen battery, and a huge display are what the iPhone 12 Pro Max is looking for. The flagship among smartphones Apple in 2020 surpasses the younger version 12 Pro in some parameters. All because of the dimensions, the increase of which made it possible to expand the capabilities of the equipment itself. The most powerful processor A14 Bionic solves the issues of photo and video shooting, autonomy, machine learning, without requiring any special modules to help.</p>
+                    <p>This year, users will not be able to find the usual headphones and power supply in the box. Apple accessories only provide a Lightning to Type-c cable that supports fast charging.</p>
+
+                    <picture ><img id="two-ph" src="https://i.citrus.ua/imgcache/size_500/uploads/shop/e/f/ef2d3f2f3e3e58d513892327cf48353d.jpg" alt="ph"></picture>
+
+                    <p>Flat side bezels have returned to the iPhone, and this is considered one of the best solutions from Apple. Made of stainless steel, they promise to be quite reliable and to last to the last without chipping.</p>
+                    <p>LiDAR technology is only available in the "pro" versions of the 12 line. She is responsible for working with augmented reality, while using NASA developments for an expedition to Mars. And this system will fit in the palm of your hand. Scan your surroundings to transform it into a 3D model with amazing accuracy. And adding something new to it is not a problem.
+                    Also, thanks to LiDAR, stunning night shots are possible. All noise arising from lack of light will disappear. Autofocus will be able to work 6 times faster, and shots in the dark will remain saturated. The artificial intelligence will highlight the main subject in the photo, making it the main figure against the background of the environment.</p>
+                    <p></p>
+                    <hr>
+                </div>
+                <div id="characteristics" class="characteristics">
+                    <h2>Characteristics</h2>
+                    <h5>For Apple iPhone 12 Pro 256 Gb Pacific Blue</h5>
+                    <div class="characteristics-block">
+                        <table>
+                            <tbody>
+                                <tr><td colspan="2">COMMUNICATION</td></tr>
+                                <tr>
+                                    <td>GSM bands:</td>
+                                    <td>2100, 850, 900, 1800, 1900</td>
+                                </tr>
+                                <tr>
+                                    <td>The Internet:</td>
+                                    <td>5G, GPRS, EDGE, 3G, 4G</td>
+                                </tr>
+                                <tr>
+                                    <td>UMTS bands:</td>
+                                    <td>850, 1700, 1900, 2100, 900</td>
+                                </tr>
+                                <tr>
+                                    <td>NFC:</td>
+                                    <td>there is</td>
+                                </tr>
+                                <tr>
+                                    <td>Bluetooth:</td>
+                                    <td>5.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4>DISPLAY</h4>
+                        <a href="#" class="credit more">Show more</a>
+                    </div>
+                    <hr>
+                </div>
+                <div class="feedback" id="feedback">
+                    <h2>Customer reviews Apple iPhone 12 Pro 256 Gb Pacific Blue</h2>
+
+                    <div class="section-item-body">
+                        <div class="testimonial-head">
+                            <span>Andrey, 12.11.2020 15:13:38</span>
+                        </div>
+                        <div class="testimonial-body">
+                            <div class="rate-block">
+                                <div class="rating-visual">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="testimonial-block">
+                                <div class="testimonial-text-block">
+                                    <p>
+                                        Still, it was not in vain that I was waiting for the start of sales. Yes, the camera is not perfect, but much better than what other manufacturers' smartphones have. The charge holds for almost a day, but it all depends on how to use the smartphone. You expect, of course, a longer work, but with such a performance, the charge could hardly hold longer. It is a pity that a charger is not included in the package. As a beginner, I had to additionally buy an adapter. Lack of headphones is half the trouble, but charging is very tight. But overall I am satisfied. If used wisely, then 256 GB of memory is enough for a surplus.
+                                    </p>
+                                </div>
+                                <a href="#" class="credit more">
+                                    Reply
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-item-body">
+                        <div class="testimonial-head">
+                            <span>Kris, 23.01.2021 11:17:18</span>
+                        </div>
+                        <div class="testimonial-body">
+                            <div class="rate-block">
+                                <div class="rating-visual">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="testimonial-block">
+                                <div class="testimonial-text-block">
+                                    <p>
+                                        Normal phone, i love apple
+                                    </p>
+                                </div>
+                                <a href="#" class="credit more">
+                                    Reply
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="rev">Add a review</a>
+                </div>
+            </div>
         </div>
+        
     </main>
     <footer>
         <div class="foot">
             <ul class="ft-ul pul">
-                <li><a href="category.html">Category</a></li>
+                <li><a href="categories.html">Сategories</a></li>
                 <li><a href="shop-cart.html">Cart</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>

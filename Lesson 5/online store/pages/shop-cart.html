@@ -5,31 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="about-cart-order.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Shopping Cart</title>
 </head>
 <body>
     <nav>
         <a href="../index.html" class="nav-title">
-            Techno store
+            Techno store <i class="fab fa-phoenix-squadron"></i>
         </a>
         <ul>
-            <li><a href="category.html">Category</a></li>
+            <li><a href="categories.html">Categories</a></li>
             <li><a href="#">Cart</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
     </nav>
     <main>
         <div class="container">
+            <div class="cart">
+                <h2>Cart</h2>
+                <div class="cart-content">
+                    <div class="minicart-items-wrapper">
+                        <div class="product">
+                            <a href="./item.html">
+                            <picture>
+                                <img src="https://apple-mania.com.ua/media/catalog/product/cache/c75c9c3a112d68d748853698912cbcf4/a/p/apple-iphone-12-pro-max-blue_2.png" alt="">
+                            </picture></a>
+                                <div class="product-info">
+                                    <span>Code MGDA3</span>
+                                    <h3>Apple iPhone 12 Pro Max 128Gb Pacific Blue</h3>
+                                </div>
 
+                                <div class="product-item-pricing">
+                                    <div class="i min">
+                                        -
+                                    </div>
+                                    <div class="capac">
+                                        1
+                                    </div>
+                                    <div class="i plus">
+                                        +
+                                    </div>
+                                </div>
+                                <div class="pr-price">
+                                    <h2>$1100</h2>
+                                </div>
+                                <div class="garbage">
+                                    <i class="far fa-trash-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sect-buy">
+                        <div class="add-promo"><h3>+ Add promocode</h3></div>
+                        <div class="subtotal"><span>2 item worth</span>$1100</div>
+                        <div class="grand-total">
+                            <span>TOTAL</span><span class="pr">$1100</span>
+                        </div>
+                        <div class="checkout">
+                            Checkout
+                        </div>
+                        <a href="./categories.html">Continue shopping</a>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <footer>
         <div class="foot">
             <ul class="ft-ul pul">
-                <li><a href="./pages/category.html">Category</a></li>
-                <li><a href="./pages/shop-cart.html">Cart</a></li>
-                <li><a href="./pages/about.html">About</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="shop-cart.html">Cart</a></li>
+                <li><a href="about.html">About</a></li>
             </ul>
     
             <div class="ft-ul">
