@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Newsreader', serif;
+    box-sizing: border-box;
 }
 
 nav {
@@ -28,6 +29,7 @@ a:hover {
 ul {
     display: flex;
     list-style-type:none;
+    line-height: 40px;
 }
 
 li {
@@ -40,14 +42,36 @@ li {
 } */
 
 main {
-    margin: 20px;
+    margin: 20px 0;
     width: 100%;
+    min-height: calc(100vh - 302px);
 }
 
 .container {
     width: 900px;
     margin: 0 auto;
     
+}
+
+.f-center {
+    display: flex;
+    justify-content: center;
+}
+
+.content h2 {
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.content p {
+    font-size: 20px;
+}
+
+.phh picture img {
+    display: block;
+    margin: 20px auto;
+    width: 600px;
+    height: 300px;
 }
 
 /* FOOTER */
