@@ -2,11 +2,97 @@
     .container {
         width: 700px;
     }
+
+    .product-info h3 {
+        font-size: 15px;
+    }
+
+    .grand-total {
+        font-size: 25px;
+    }
+
+    .main-photo picture img {
+        height: 300px;
+        width: 300px;
+    }
+
+    .product-info-section {
+        margin-bottom: 20px;
+    }
+
+    .container-list {
+        width: 750px;
+    }
+
+    .category-list {
+        justify-content: center;
+    }
+
+    .map iframe {
+        width: 470px;
+        height: 300px;
+    }
+
+    i {
+        font-size: 30px;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .container {
         width: 500px;
+    }
+
+    .navig {
+        flex-direction: column;
+    }
+
+    .container-list {
+        width: 500px;
+    }
+
+    .map iframe {
+        width: 455px;
+        height: 300px;
+    }
+
+
+
+    .product-card-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-some-img {
+        justify-content: center;
+    }
+
+    .product-info-section {
+        justify-content: center;
+        margin: 50px;
+    }
+
+    .description-column {
+        margin: 0 20px;
+    }
+
+    .about-product picture img {
+        width: 300px;
+        height: 150px;
+    }
+
+    #two-ph {
+        width: 300px;
+        height: 300px;
+    }
+
+    .product-description a {
+        height: 40px;
+    }
+
+    .product-img a picture img {
+        height: 150px;
+        width: 150px;
     }
 
     .phh picture img {
@@ -20,14 +106,46 @@
         width: 100%;
     }
 
+    .product a picture img {
+        padding: 1px;
+    }
+
+    .product-info h3 {
+        font-size: 12px;
+    }
+
+    .pr-price {
+        font-size: 13px;
+    }
+
+    .foot {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer,
+    .ft {
+        font-size: 25px;
+    }
+
     .product-item {
-        width: 48%;
+        width: 45%;
         margin-right: 4%;
+        border: 1px solid grey;
     }
 
     .product-item:nth-child(2n) {
         margin-right: 0;
     }
+
+    /* .product {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 20px;
+    } */
 }
 
 @media screen and (max-width: 500px) {
@@ -36,8 +154,59 @@
         width: 425px;
     }
 
+    .product-info {
+        max-width: 100px;
+    }
+
+    .fa-trash-alt {
+        font-size: 20px;
+    }
+
+    .product a picture img {
+        width: 70px;
+    }
+
+    .product-info span {
+        display: none;
+    }
+
+    .map iframe {
+        width: 380px;
+        height: 210px;
+    }
+
+
+    .category-list {
+        justify-content: center;
+    }
+
+    .product-parameter-row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buy-btn {
+        height: 50px;
+    }
+
+    .about-product-titles {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-product-titles a {
+        margin: 10px 0;
+        text-decoration: underline;
+    }
+
     nav {
         flex-direction: column;
+        justify-content: center;
+        height: 80px;
+    }
+    
+    .product-img {
+        display: flex;
         justify-content: center;
     }
 
@@ -51,6 +220,7 @@
     .foot {
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 
     footer,
@@ -58,19 +228,73 @@
         font-size: 18px;
     }
 
+    .products-info {
+        flex-direction: column;
+    }
+
     .product-item {
-        width: 100%;
+        width: 80%;
         margin-right: 0%;
+
     }
 
     nav {
-        padding: 10px 0;
+        padding: 30px 0;
     }
-
 
 }
 
 @media screen and (max-width: 425px) {
+
+    .delivery label input {
+        width: 280px;
+    }
+
+    .cart-content {
+        padding-top: 5px;
+    }
+
+    .product {
+        flex-direction: column;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+
+    .product a picture img {
+        width: 100px;
+    }
+    
+    .map iframe {
+        width: 257px;
+        height: 200px;
+    }
+
+    .ft {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-photo picture img {
+        height: 290px;
+        width: 250px;
+    }
+
+    .price-old {
+        font-size: 16px;
+    }
+
+    .product-info-row {
+        flex-direction: column;
+    }
+
+    .price {
+        font-size: 25px;
+    }
+
+    .discount-percent {
+        font-size: 15px;
+    }
+
 
     .container {
         width: 300px;
