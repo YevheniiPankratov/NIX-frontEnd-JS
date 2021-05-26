@@ -132,7 +132,7 @@ picture img {
 
 .btn-buy a{
     display: block;
-    height: 30px;
+    height: 35px;
     background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
     text-align: center;
     border-radius: 10px;
