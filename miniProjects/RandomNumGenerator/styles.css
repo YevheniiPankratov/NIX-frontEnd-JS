@@ -1,0 +1,49 @@
+.random {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 20px;
+    background-color: rgb(194, 194, 194);
+    margin-top: 50px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+}
+
+.la-in {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+#generate {
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+ul {
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.date {
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
