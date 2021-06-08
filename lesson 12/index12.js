@@ -63,18 +63,18 @@ clear(elem);
 //    <------- Ex 6 ------->
 //    <------- Ex 6 ------->
 
-  let text;
-  let ul = document.createElement("ul");
-  document.body.appendChild(ul);
-  do {
-      text = prompt("please enter text", "");
-      if (text !== "" && text != null) {
-        let li = document.createElement("li");
-        li.appendChild(document.createTextNode(text));
-        ul.appendChild(li);
-      }
+  // let text;
+  // let ul = document.createElement("ul");
+  // document.body.appendChild(ul);
+  // do {
+  //     text = prompt("please enter text", "");
+  //     if (text !== "" && text != null) {
+  //       let li = document.createElement("li");
+  //       li.appendChild(document.createTextNode(text));
+  //       ul.appendChild(li);
+  //     }
 
-  } while(text !== "" && text != null);
+  // } while(text !== "" && text != null);
 
 //    <------- Ex 7 ------->
 //    <------- Ex 7 ------->
@@ -92,7 +92,50 @@ clear(elem);
 //    <------- Ex 8 ------->
 //    <------- Ex 8 ------->
 
+function getCurrentDay(date) {
+  let day = date.getDay();
+  if (day == 0) day = 7;
+  return day - 1;
+}
 
+function createCalendar(elem, year, month) {
+  let monthNum = month - 1;
+  let newDate = new Date(year, monthNum);
+  let table = `<table>
+                    <tr>
+                        <th>пн</th>
+                        <th>вт</th>
+                        <th>ср</th>
+                        <th>чт</th>
+                        <th>пт</th>
+                        <th>сб</th>
+                        <th>вс</th>
+                    </tr>
+                    <tr>`;
+
+  for (let i = 0; i < getCurrentDay(newDate); i++) {
+    table += '<td></td>';
+  }
+
+  while (newDate.getMonth() == monthNum) {
+    table += '<td>' + newDate.getDate() + '</td>';
+    if (getCurrentDay(newDate) % 7 == 6) {
+      table += '</tr><tr>';
+    }
+    newDate.setDate(newDate.getDate() + 1);
+  }
+
+  if (getCurrentDay(newDate) != 0) {
+    for (let i = getCurrentDay(newDate); i < 7; i++) {
+      table += '<td></td>';
+    }
+  }
+
+  table += '</tr></table>';
+  elem.innerHTML = table;
+}
+
+createCalendar(cal, 2012, 9);
 
 //    <------- Ex 9 ------->
 //    <------- Ex 9 ------->
