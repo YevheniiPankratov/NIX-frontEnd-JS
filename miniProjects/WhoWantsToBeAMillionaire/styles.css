@@ -35,7 +35,7 @@ body {
 }
 
 .info {
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: 50px;
     background-color: rgba(0, 0, 0, 0.95);
     border: 2px solid white;
@@ -71,13 +71,28 @@ i {
     justify-content: center;
 }
 
-.list-win ol li:nth-child(odd) {
+.list-win ol li:nth-child(5n+1) {
     color: rgb(251, 255, 0);
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .list-win ol li {
-    font-size: 23px;
+  font-size: 20px;
+  line-height: 20px;
+  margin: 0 0 8px 0;
+  text-align: center;
+  width: 120px;
+}
+
+li::marker {
+    color: white;
+}
+
+.list-win ol li:nth-child(15) {
+    text-align: center;
+    /* background-color: rgb(255, 255, 255); */
+    font-size: 22px;
+    /* color: black; */
 }
 
 .timer {
@@ -154,6 +169,7 @@ i {
   }
   
   .btn {
-    color: white;
+    color: black;
+    background-color: white;
+    margin-top: 5px;
   }
-  

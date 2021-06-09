@@ -10,10 +10,11 @@ function generate(event) {
             newLi.textContent = newRandomNum;
             list.prepend(newLi);
         }
+        res.innerHTML = 'Results'
         let newDateAndTime = new Date();
         let dateNow = newDateAndTime.toString().slice(0, -41);
         date.innerHTML = dateNow;
     } else {
-        res.innerHTML = 'Нужно ввести все значения!';
+        res.innerHTML = 'All values must be entered!';
     }
 }

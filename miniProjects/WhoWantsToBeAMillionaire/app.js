@@ -4,25 +4,121 @@ const quizQuestions = [
       title: 'Почему вода в море кажется синей?',
       answers: ['A: Из-за водорослей', 'B: Из-за цвета дна', 'C: Вода отражает небо', 'D: Из-за растворенной соли'],
       rightAnswer: 2,
+      money: 100,
+      fireproofBank: false
     },
     {
       id: 1,
       title: 'Чего не может торнадо?',
       answers: [ 'A: Стоять на месте', 'B: Поднять в воздух автомобиль', 'C: Вырвать с корнями дерево', 'D: Разрушить здание'],
       rightAnswer: 0,
+      money: 200,
+      fireproofBank: false
     },
     {
       id: 2,
-      title: 'Раньше было модно носить вместо очков…',
+      title: 'Раньше было модно носить вместо очков...',
       answers: ['A: Микроскоп', 'B: Бинокль', 'C: Монокль', 'D: Телескоп'],
       rightAnswer: 2,
+      money: 300,
+      fireproofBank: false
     },
     {
       id: 3,
       title: 'С каким цветом ассоциируится JavaScript?',
       answers: ['A: Желтый', 'B: Красный', 'C: Белый', 'D: Фиолетовый'],
       rightAnswer: 0,
+      money: 500,
+      fireproofBank: false
     },
+    {
+      id: 4,
+      title: 'Какой цвет на флагах государств обозначает смелость и мужество?',
+      answers: ['A: Коричневый', 'B: Красный', 'C: Зеленый', 'D: Синий'],
+      rightAnswer: 1,
+      money: 1000,
+      fireproofBank: true
+    },
+    {
+      id: 5,
+      title: 'Какая из перечисленных рек — самая длинная?',
+      answers: ['A: Нева', 'B: Миссисипи', 'C: Нил', 'D: Волга'],
+      rightAnswer: 2,
+      money: 2000,
+      fireproofBank: false
+    },
+    {
+      id: 6,
+      title: 'Какой по счету от Солнца является Земля?',
+      answers: ['A: Третья', 'B: Пятая', 'C: Вторая', 'D: Первая'],
+      rightAnswer: 0,
+      money: 4000,
+      fireproofBank: false
+    },
+    {
+      id: 7,
+      title: 'Чему равно отношение пути к времени?',
+      answers: ['A: Расстоянию', 'B: Скорости', 'C: Производительности', 'D: Силе'],
+      rightAnswer: 1,
+      money: 8000,
+      fireproofBank: false
+    },
+    {
+      id: 8,
+      title: 'Как называется прямая, ограниченная точками?',
+      answers: ['A: Луч', 'B: Отрезок', 'C: Биссектриса', 'D: Плоскость'],
+      rightAnswer: 1,
+      money: 16000,
+      fireproofBank: false
+    },
+    {
+      id: 9,
+      title: 'Сколько звуков в слове «конь»?',
+      answers: ['A: Четыре', 'B: Три', 'C: Пять', 'D: Два'],
+      rightAnswer: 1,
+      money: 32000,
+      fireproofBank: true
+    },
+    {
+      id: 10,
+      title: 'Каким животным было Серебряное копытце?',
+      answers: ['A: Олень', 'B: Лось', 'C: Козел', 'D: Антилопа'],
+      rightAnswer: 2,
+      money: 64000,
+      fireproofBank: false
+    },
+    {
+      id: 11,
+      title: 'Какой предмет хранила говорящая голова из поэмы «Руслан и Людмила»?',
+      answers: ['A: Меч', 'B: Топор', 'C: Скатерть-самобранка', 'D: Не было там такого'],
+      rightAnswer: 0,
+      money: 125000,
+      fireproofBank: false
+    },
+    {
+      id: 12,
+      title: 'Какой из этих цветов больше всего любят комары?',
+      answers: ['A: Желтый', 'B: Белый', 'C: Синий', 'D: Красный'],
+      rightAnswer: 2,
+      money: 250000,
+      fireproofBank: false
+    },
+    {
+      id: 13,
+      title: 'Если смешать краску красного и синего цвета, получится...',
+      answers: ['A: Зеленый', 'B: Желтый', 'C: Фиолетовый', 'D: Черный'],
+      rightAnswer: 0,
+      money: 500000,
+      fireproofBank: false
+    },
+    {
+      id: 14,
+      title: 'Как называется активная оболочка Земли, которая населена живыми организмами?',
+      answers: ['A: Атмосфера', 'B: Гидросфера', 'C: Биосфера', 'D: Земная кора'],
+      rightAnswer: 2,
+      money: 1000000,
+      fireproofBank: true
+    }
   ];
 
 let references = {
@@ -58,6 +154,7 @@ let state = {
   attempt: 1,
   secondsLimit: 60,
   completedAnswers: [],
+  numberQuest: 16
 }
 
 let timer60sec;
@@ -77,6 +174,16 @@ function startQuiz () {
   startGame()
 }
 
+function backgroundForUniqLi (state,n) {
+  document.querySelectorAll('.list-win ol li').forEach(item => {
+    item.style.backgroundColor = 'black'
+    item.style.color = 'white'
+  })
+  document.querySelectorAll('.list-win ol li:nth-child(5n+1)').forEach(item => item.style.color = 'yellow')
+  document.querySelector(`.list-win ol li:nth-child(${state-n})`).style.backgroundColor = 'white'
+  document.querySelector(`.list-win ol li:nth-child(${state-n})`).style.color = 'black'
+}
+
 function startGame () {
   const listOfQuestions = createListOfQuestions(quizQuestions[state.indexOfQuestion].answers);
   references.questionTitle.innerHTML = quizQuestions[state.indexOfQuestion].title;
@@ -87,6 +194,8 @@ function startGame () {
   state.secondsLimit = 61;
   timer60sec = setInterval(tick, 1000)
   enableOpts();
+  backgroundForUniqLi(state.numberQuest, 1)
+  state.numberQuest -= 1
 };
 
 function tick(){
