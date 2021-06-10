@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+    <script>
+      document.onclick = function(e) { // показывает координаты точки клика
+        coords.innerHTML = e.clientX + ':' + e.clientY;
+      };
+    </script>
+</head>
+<body style="height:2000px">
+   
+  <h2>Уведомление находится справа</h2>
+
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel est harum repellat, deserunt ullam perspiciatis exercitationem inventore tempora quos distinctio? Reiciendis laboriosam repellendus blanditiis. A, culpa numquam. Perferendis vel odio architecto. Impedit ut magnam nihil quas, ipsam mollitia delectus itaque optio necessitatibus architecto possimus sequi ex, dignissimos quibusdam eaque temporibus hic rerum iusto id corrupti deleniti. Pariatur expedita ea sit quo numquam architecto perspiciatis magnam fugiat laborum eum exercitationem voluptas, doloribus debitis sint adipisci culpa, cupiditate odit sequi obcaecati quas. Maxime quibusdam vitae consequatur molestias illum obcaecati id, cum porro ullam temporibus voluptatum odit excepturi itaque iste est commodi earum quos tenetur incidunt impedit atque sapiente dolor perferendis vel! Nulla incidunt omnis aspernatur repellat ipsum atque explicabo perferendis facere placeat quia repudiandae voluptates molestiae, ratione quae numquam ipsam sequi autem quis. Cumque deserunt consequatur voluptas dolorem sed aperiam minus dolor, qui tenetur natus id fuga facere sunt nostrum ab eius dignissimos ipsum illum, aliquid, odit autem totam exercitationem. Dolor et molestiae delectus labore doloribus saepe? Rem laboriosam, labore odio atque illo quod exercitationem, officiis necessitatibus assumenda doloribus harum nobis in ab debitis sapiente est distinctio saepe sequi, dolores quasi dolor voluptas. Omnis deserunt voluptatum tenetur exercitationem consequuntur hic, vero consequatur?
+  </p>
+
+  Кликните в любом месте для получения координат в контексте окна.
+  <br> Это для тестирования, чтобы проверить результат, который вы получили с помощью JavaScript.
+  <br>
+  <div id="coords">(координаты покажутся здесь)</div>
+
+
+  <div id="field">
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+  </div>
+
+
+  <div class="triangle-right" style="left:-20px;top:-176px">1</div>
+  <div class="triangle-right" style="left:-10px;top:-178px">3</div>
+  <div class="triangle-right" style="left:190px;top:-40px">4</div>
+  <div class="triangle-right" style="left:200px;top:-42px">2</div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Reprehenderit sint atque dolorum fuga ad incidunt voluptatum error
+    fugiat animi amet! Odio temporibus nulla id unde quaerat dignissimos
+    enim nisi rem provident molestias sit tempore omnis recusandae
+    esse sequi officia sapiente.</p>
+    
+    <blockquote>
+    Teacher: Why are you late?
+    Student: There was a man who lost a hundred dollar bill.
+    Teacher: That's nice. Were you helping him look for it?
+    Student: No. I was standing on it.
+    </blockquote>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Reprehenderit sint atque dolorum fuga ad incidunt voluptatum error
+    fugiat animi amet! Odio temporibus nulla id unde quaerat dignissimos
+    enim nisi rem provident molestias sit tempore omnis recusandae
+    esse sequi officia sapiente.</p>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <input type="button" id="hider" value="Нажмите, чтобы спрятать текст" />
+
+    <div id="text">Текст</div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    Нажмите на поле для перемещения мяча.
+    <br>
+  
+  
+    <div id="field2">
+      <img src="https://ru.js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div id="sweeties" class="menu">
+      <span class="title">Сладости (нажми меня)!</span>
+      <ul>
+        <li>Пирожное</li>
+        <li>Пончик</li>
+        <li>Мёд</li>
+      </ul>
+  
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div>
+      <div class="pane">
+        <h3>Лошадь</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quaerat labore architecto quasi sunt impedit. Voluptate beatae assumenda quos! Iure deleniti repellendus animi fuga rerum doloribus eius quaerat placeat nostrum.</p>
+      </div>
+      <div class="pane">
+        <h3>Осёл</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quaerat labore architecto quasi sunt impedit. Voluptate beatae assumenda quos! Iure deleniti repellendus animi fuga rerum doloribus eius quaerat placeat nostrum.</p>
+      </div>
+      <div class="pane">
+        <h3>Кошка</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quaerat labore architecto quasi sunt impedit. Voluptate beatae assumenda quos! Iure deleniti repellendus animi fuga rerum doloribus eius quaerat placeat nostrum.</p>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h2>Кликните на кнопку ниже</h2>
+
+  <input type="button" value="Кликните, чтобы увидеть форму" id="show-button">
+
+
+  <div id="prompt-container">
+    <form id="prompt-form">
+      <div id="prompt-message"></div>
+      <input name="text" type="text">
+      <input type="submit" value="OK">
+      <input type="button" name="cancel" value="Отмена">
+    </form>
+  </div>
+
+
+    <script src="./index13.js"></script>
+</body>
+</html>

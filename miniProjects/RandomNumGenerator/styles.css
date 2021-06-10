@@ -47,3 +47,7 @@ ul {
     align-items: center;
     flex-direction: column;
 }
+
+#res {
+    font-size: 20px;
+}
