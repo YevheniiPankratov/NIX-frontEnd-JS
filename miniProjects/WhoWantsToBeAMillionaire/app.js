@@ -4,120 +4,105 @@ const quizQuestions = [
       title: 'Почему вода в море кажется синей?',
       answers: ['A: Из-за водорослей', 'B: Из-за цвета дна', 'C: Вода отражает небо', 'D: Из-за растворенной соли'],
       rightAnswer: 2,
-      money: 100,
-      fireproofBank: false
+      money: 100
     },
     {
       id: 1,
       title: 'Чего не может торнадо?',
       answers: [ 'A: Стоять на месте', 'B: Поднять в воздух автомобиль', 'C: Вырвать с корнями дерево', 'D: Разрушить здание'],
       rightAnswer: 0,
-      money: 200,
-      fireproofBank: false
+      money: 200
     },
     {
       id: 2,
       title: 'Раньше было модно носить вместо очков...',
       answers: ['A: Микроскоп', 'B: Бинокль', 'C: Телескоп', 'D: Монокль'],
       rightAnswer: 3,
-      money: 300,
-      fireproofBank: false
+      money: 300
     },
     {
       id: 3,
       title: 'С каким цветом ассоциируится JavaScript?',
       answers: ['A: Желтый', 'B: Красный', 'C: Белый', 'D: Фиолетовый'],
       rightAnswer: 0,
-      money: 500,
-      fireproofBank: false
+      money: 500
     },
     {
       id: 4,
       title: 'Какой цвет на флагах государств обозначает смелость и мужество?',
       answers: ['A: Коричневый', 'B: Красный', 'C: Зеленый', 'D: Синий'],
       rightAnswer: 1,
-      money: 1000,
-      fireproofBank: true
+      money: 1000
     },
     {
       id: 5,
       title: 'Какая из перечисленных рек — самая длинная?',
       answers: ['A: Нева', 'B: Миссисипи', 'C: Нил', 'D: Волга'],
       rightAnswer: 2,
-      money: 2000,
-      fireproofBank: false
+      money: 2000
     },
     {
       id: 6,
       title: 'Какой по счету от Солнца является Земля?',
       answers: ['A: Первая', 'B: Пятая', 'C: Вторая', 'D: Третья'],
       rightAnswer: 3,
-      money: 4000,
-      fireproofBank: false
+      money: 4000
     },
     {
       id: 7,
       title: 'Чему равно отношение пути к времени?',
       answers: ['A: Расстоянию', 'B: Скорости', 'C: Производительности', 'D: Силе'],
       rightAnswer: 1,
-      money: 8000,
-      fireproofBank: false
+      money: 8000
     },
     {
       id: 8,
       title: 'Как называется прямая, ограниченная точками?',
       answers: ['A: Луч', 'B: Плоскость', 'C: Биссектриса', 'D: Отрезок'],
       rightAnswer: 3,
-      money: 16000,
-      fireproofBank: false
+      money: 16000
     },
     {
       id: 9,
       title: 'Сколько звуков в слове «конь»?',
       answers: ['A: Четыре', 'B: Три', 'C: Пять', 'D: Два'],
       rightAnswer: 1,
-      money: 32000,
-      fireproofBank: true
+      money: 32000
     },
     {
       id: 10,
       title: 'Каким животным было Серебряное копытце?',
       answers: ['A: Олень', 'B: Лось', 'C: Козел', 'D: Антилопа'],
       rightAnswer: 2,
-      money: 64000,
-      fireproofBank: false
+      money: 64000
     },
     {
       id: 11,
       title: 'Какой предмет хранила говорящая голова из поэмы «Руслан и Людмила»?',
       answers: ['A: Меч', 'B: Топор', 'C: Скатерть-самобранка', 'D: Не было там такого'],
       rightAnswer: 0,
-      money: 125000,
-      fireproofBank: false
+      money: 125000
     },
     {
       id: 12,
       title: 'Какой из этих цветов больше всего любят комары?',
       answers: ['A: Желтый', 'B: Белый', 'C: Синий', 'D: Красный'],
       rightAnswer: 2,
-      money: 250000,
-      fireproofBank: false
+      money: 250000
     },
     {
       id: 13,
       title: 'Если смешать краску красного и синего цвета, получится...',
       answers: ['A: Зеленый', 'B: Желтый', 'C: Фиолетовый', 'D: Черный'],
       rightAnswer: 0,
-      money: 500000,
-      fireproofBank: false
+      money: 500000
     },
     {
       id: 14,
       title: 'Как называется активная оболочка Земли, которая населена живыми организмами?',
       answers: ['A: Атмосфера', 'B: Гидросфера', 'C: Земная кора', 'D: Биосфера'],
       rightAnswer: 3,
-      money: 1000000,
-      fireproofBank: true
+      money: 1000000
     }
   ];
 
@@ -190,7 +175,7 @@ function startGame () {
   state.indexQuestionId = 0;
   references.numberOfquestion.innerHTML = state.indexOfPage + 1;
   state.indexOfPage += 1;
-  state.secondsLimit = 6001;
+  state.secondsLimit = 61;
   timer60sec = setInterval(tick, 1000)
   enableOpts();
   backgroundForUniqLi(state.numberQuest, 1)
