@@ -18,8 +18,8 @@ const quizQuestions = [
     {
       id: 2,
       title: 'Раньше было модно носить вместо очков...',
-      answers: ['A: Микроскоп', 'B: Бинокль', 'C: Монокль', 'D: Телескоп'],
-      rightAnswer: 2,
+      answers: ['A: Микроскоп', 'B: Бинокль', 'C: Телескоп', 'D: Монокль'],
+      rightAnswer: 3,
       money: 300,
       fireproofBank: false
     },
@@ -50,8 +50,8 @@ const quizQuestions = [
     {
       id: 6,
       title: 'Какой по счету от Солнца является Земля?',
-      answers: ['A: Третья', 'B: Пятая', 'C: Вторая', 'D: Первая'],
-      rightAnswer: 0,
+      answers: ['A: Первая', 'B: Пятая', 'C: Вторая', 'D: Третья'],
+      rightAnswer: 3,
       money: 4000,
       fireproofBank: false
     },
@@ -66,8 +66,8 @@ const quizQuestions = [
     {
       id: 8,
       title: 'Как называется прямая, ограниченная точками?',
-      answers: ['A: Луч', 'B: Отрезок', 'C: Биссектриса', 'D: Плоскость'],
-      rightAnswer: 1,
+      answers: ['A: Луч', 'B: Плоскость', 'C: Биссектриса', 'D: Отрезок'],
+      rightAnswer: 3,
       money: 16000,
       fireproofBank: false
     },
@@ -114,8 +114,8 @@ const quizQuestions = [
     {
       id: 14,
       title: 'Как называется активная оболочка Земли, которая населена живыми организмами?',
-      answers: ['A: Атмосфера', 'B: Гидросфера', 'C: Биосфера', 'D: Земная кора'],
-      rightAnswer: 2,
+      answers: ['A: Атмосфера', 'B: Гидросфера', 'C: Земная кора', 'D: Биосфера'],
+      rightAnswer: 3,
       money: 1000000,
       fireproofBank: true
     }
@@ -143,15 +143,14 @@ let references = {
     taskModal: document.querySelector('.task-modal'),
     closeModal: document.querySelector('[data-value="close-modal"]'),
     timer: document.querySelector('.timer'),
+    bank: document.querySelector('[data-value="bank"]'),
 }
 
 let state = {
   score: 0,
-  money: 125000,
   indexQuestionId: 0,
   indexOfPage: 0,
   indexOfQuestion: 0,
-  attempt: 1,
   secondsLimit: 60,
   completedAnswers: [],
   numberQuest: 16
@@ -185,13 +184,13 @@ function backgroundForUniqLi (state,n) {
 }
 
 function startGame () {
-  const listOfQuestions = createListOfQuestions(quizQuestions[state.indexOfQuestion].answers);
+  const listOfQuestions = renderListOfQuestions(quizQuestions[state.indexOfQuestion].answers);
   references.questionTitle.innerHTML = quizQuestions[state.indexOfQuestion].title;
   references.optionsList.innerHTML = listOfQuestions;
   state.indexQuestionId = 0;
   references.numberOfquestion.innerHTML = state.indexOfPage + 1;
   state.indexOfPage += 1;
-  state.secondsLimit = 61;
+  state.secondsLimit = 6001;
   timer60sec = setInterval(tick, 1000)
   enableOpts();
   backgroundForUniqLi(state.numberQuest, 1)
@@ -201,14 +200,13 @@ function startGame () {
 function tick(){
   if (state.secondsLimit == 1) {
     references.timer.innerHTML = 'К сожалению вы не успели ответить на вопрос(('
-    state.attempt -= 1
     clearInterval(timer60sec)
-    if(state.attempt == 0) {
-      alert('Вы не успели ответить на вопрос! Вы использовали право на ошибку! Больше права на ошибку нету!')
-    } else if (state.attempt < 0) {
-      alert('К сожалению, игра для вас окончена!')
-      reloadPage()
-    }
+      references.helpForUser.innerHTML = 'Вы не успели ответить на вопрос! Для вас игра окончена!'
+      references.taskModal.classList.add('show');
+      references.tH.classList.add('disabled');
+      references.closeModal.addEventListener('click', () => {
+        reloadPage()
+      })
   } else {
     references.sec.innerHTML = (--state.secondsLimit)
   }
@@ -226,13 +224,36 @@ function choiceOfNextQuestion() {
     }
   }
   state.completedAnswers.push(state.indexOfQuestion);
+  userBank()
 }
+
 
 function quizOver() {
   references.quizOverModal.classList.add('show');
-  references.correctAnswer.innerHTML = state.score;
-  references.totalMoney.innerHTML = state.money;
   references.numberOfAllquestion2.innerHTML = quizQuestions.length;
+  references.correctAnswer.innerHTML = state.score;
+  console.log(state.score);
+  if(state.score < 5) {
+    references.totalMoney.innerHTML = 0;
+  } else if (state.score >= 5 && 10 > state.score) {
+    references.totalMoney.innerHTML = 1000;
+  } else if (state.score >= 10 && 15 > state.score){
+    references.totalMoney.innerHTML = 32000;
+  } else if (state.score == 15) {
+    references.totalMoney.innerHTML = 1000000;
+  }
+}
+
+function userBank() {
+  let bank;
+  if(state.completedAnswers.length == 5){
+    bank = quizQuestions[4].money
+     references.bank.innerHTML = bank
+   }
+   if (state.completedAnswers.length == 10){
+    bank = quizQuestions[9].money
+    references.bank.innerHTML = bank
+   } 
 }
 
 function checkAnswers(event) {
@@ -241,35 +262,16 @@ function checkAnswers(event) {
       enableOpts();
       event.target.classList.add('correct');
       state.score += 1;
-      state.money += state.money;
       clearInterval(timer60sec)
         setTimeout(() => {
-          if (quizQuestions[state.indexOfQuestion].id !== 1) {
             choiceOfNextQuestion();
-          } else {
-            if (confirm('Хотите забрать деньги и закончить игру?')) {
-              clearInterval(timer60sec)
-              quizOver();
-            } else {
-              choiceOfNextQuestion();
-            }
-          }
         }, 1500);
-        
       } else {
       clearInterval(timer60sec)
-        state.attempt -= 1;
         event.target.classList.add('wrong');
         disabledOpts();
         setTimeout(() => {
-          if (state.attempt < 0) {
-            alert('К сожалению, игра для вас окончена! Вы ранее потратили своё право на ошибку!')
-            reloadPage()
-          } else if (state.attempt == 0) {
-            alert('Вы использовали право на ошибку. И так, следующий вопрос!')
-            choiceOfNextQuestion();
-            enableOpts();
-          }
+          quizOver()
         }, 1500);
       }}}
 
@@ -278,20 +280,40 @@ function reloadPage() {
   window.location.reload();
 }
 
+function randomNumbers(min, max) {
+  let randomN = min + Math.random() * (max + 1 - min);
+  return Math.floor(randomN);
+}
+
 function firstHelp() {
   let g = quizQuestions[state.indexOfQuestion].rightAnswer
   references.frth = document.querySelectorAll('.frtH')
   references.frth.forEach(item => {
-    item.classList.add('none')
+    item.remove()
   })
-  references.frth[g].classList.remove('none')
-  references.frth[g+1].classList.remove('none')
+  console.log(g);
+  if (g == 0 || g == 2) {
+    references.optionsList.appendChild(references.frth[g])
+    randomQ()
+  } else {
+    randomQ()
+    references.optionsList.appendChild(references.frth[g])
+  }
+  
+  function randomQ () {
+    let randomQuest = randomNumbers(0, 3)
+    if(randomQuest !== g) {
+        references.optionsList.appendChild(references.frth[randomQuest])
+      } else if (randomQuest === g) {
+        randomQ()
+      }
+  }
   references.fH.classList.add('disabled');
-
 }
 
 function secondHelp() {
-  let randomHelp = Math.floor(Math.random() * quizQuestions.length);
+  let lengthQuest = document.querySelectorAll('[data-id]').length - 1
+  let randomHelp = randomNumbers(0, lengthQuest)
   references.helpForUser.innerHTML = quizQuestions[state.indexOfQuestion].answers[randomHelp];
   references.taskModal.classList.add('show');
   references.sH.classList.add('disabled');
@@ -299,16 +321,53 @@ function secondHelp() {
 
 function thirdHelp() {
   let max = 100;
-  let r1 = randombetween(1, max - 3);
-  let r2 = randombetween(1, max - 2 - r1);
-  let r3 = randombetween(1, max - 1 - r1 - r2);
-  let r4 = max - r1 - r2 - r3;
+  let arrRandom;
+  let lengthQuest = document.querySelectorAll('[data-id]').length;
+ 
+  if(lengthQuest == 4) {
+    let r1 = {
+      num: randomNumbers(1, max - 3),
+      title: 'A'
+    };
+    let r2 = {
+      num: randomNumbers(1, max - 2 - r1.num),
+      title: 'B'
+    } 
+    let r3 = {
+      num: randomNumbers(1, max - 1 - r1.num - r2.num),
+      title: 'C'
+    }
+    let r4 = {
+      num: max - r1.num - r2.num - r3.num,
+      title: 'D'
+    }
+    arrRandom = [r1, r2, r3, r4]
+  } else if (lengthQuest == 2) {
+    
+    let el1 = +document.querySelectorAll('[data-id]')[0].getAttribute('data-id')
+    let el2 = +document.querySelectorAll('[data-id]')[1].getAttribute('data-id')
+    
+    function checkDataAtr(el) {
+      switch (el){
+        case 0: return 'A'; 
+        case 1: return 'B'; 
+        case 2: return 'C'; 
+        case 3: return 'D'; 
+      }
+    }
 
-  function randombetween(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+    let r1 = {
+      num: randomNumbers(1, max),
+      title: checkDataAtr(el1)
+    };
+    let r2 = {
+      num: max - r1.num,
+      title: checkDataAtr(el2)
+    } 
+    arrRandom = [r1, r2]
   }
-
-  const progressList = renderProgressList (r1,r2,r3,r4)
+  
+  const progressList = renderProgressList(arrRandom)
   references.helpForUser.innerHTML = progressList
   references.taskModal.classList.add('show');
   references.tH.classList.add('disabled');
@@ -326,7 +385,7 @@ function closeModal () {
   references.taskModal.classList.remove('show');
 }
 
-function createListOfQuestions(questions) {
+function renderListOfQuestions(questions) {
   return questions
     .map(
       item =>
@@ -337,23 +396,14 @@ function createListOfQuestions(questions) {
     .join('');
 }
 
-function renderProgressList (a,b,c,d) {
-  return (`
-    А ${a}%
-    <div class="progress">
-      <div class="progress-bar bg-success" role="progressbar" style="width: ${a}%" aria-valuenow="${a}" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-    В ${b}%
-    <div class="progress">
-      <div class="progress-bar bg-info" role="progressbar" style="width: ${b}%" aria-valuenow="${b}" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-    С ${c}%
-    <div class="progress">
-      <div class="progress-bar bg-warning" role="progressbar" style="width: ${c}%" aria-valuenow="${c}" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-    D ${d}%
-    <div class="progress">
-      <div class="progress-bar bg-danger" role="progressbar" style="width: ${d}%" aria-valuenow="${d}" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-  `)
-};
+function renderProgressList(arr) {
+  return arr
+    .map(
+      item =>
+        `${item.title} ${item.num}%
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" style="width: ${item.num}%" aria-valuenow="${item.num}" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>`,
+    )
+    .join('');
+}
