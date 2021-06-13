@@ -217,7 +217,6 @@ function quizOver() {
   references.quizOverModal.classList.add('show');
   references.numberOfAllquestion2.innerHTML = quizQuestions.length;
   references.correctAnswer.innerHTML = state.score;
-  console.log(state.score);
   if(state.score < 5) {
     references.totalMoney.innerHTML = 0;
   } else if (state.score >= 5 && 10 > state.score) {
@@ -245,19 +244,26 @@ function checkAnswers(event) {
   if (event.target.tagName == 'LI') {
     if (event.target.dataset.id == quizQuestions[state.indexOfQuestion].rightAnswer) {
       enableOpts();
-      event.target.classList.add('correct');
-      state.score += 1;
+      setTimeout(() => {
+        event.target.classList.add('correct');
+        state.score += 1;
       clearInterval(timer60sec)
-        setTimeout(() => {
-            choiceOfNextQuestion();
-        }, 1500);
+      setTimeout(() => {
+        choiceOfNextQuestion();
+    }, 2000);
+      }, 1000)
       } else {
-      clearInterval(timer60sec)
-        event.target.classList.add('wrong');
-        disabledOpts();
-        setTimeout(() => {
-          quizOver()
-        }, 1500);
+      setTimeout(() => {
+        clearInterval(timer60sec)
+        let rig = document.querySelector(`[data-id="${quizQuestions[state.indexOfQuestion].rightAnswer}"]`)
+          event.target.classList.add('wrong');
+          rig.classList.add('correct')
+          disabledOpts();
+          setTimeout(() => {
+            quizOver()
+          }, 1000);
+      }, 2000)
+        
       }}}
 
 

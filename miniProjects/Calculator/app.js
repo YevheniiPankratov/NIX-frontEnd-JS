@@ -11,14 +11,14 @@ btnClear.addEventListener('click', () => {
 
 btnOperators.forEach (button => {
     button.addEventListener('click', () => {
-    calculator.chooseOperation(button.innerHTML)
+    calculator.checkEquals(button.innerHTML)
     calculator.updateDisplay()
     });
 });
 
 btnNumbers.forEach (button => {
     button.addEventListener('click', () => {
-    calculator.appendNum(button.innerHTML);
+    calculator.validation(button.innerHTML);
     calculator.updateDisplay();
     });
 });
@@ -67,12 +67,12 @@ class Calculator {
     }
 
     clear () {
-        this.currentValue = '';
+        this.currentValue = 0;
         this.prevValue = '';
         this.operation = undefined;
     }
 
-    appendNum(number) {
+    validation(number) {
         if(this.currentValue.length >= 10) {
             this.currentValue = this.currentValue.substring(0, 10);
         }
@@ -82,7 +82,7 @@ class Calculator {
         }
     }
 
-    chooseOperation(operation) {
+    checkEquals(operation) {
         if (this.prevValue !== '') {
             this.compute()
         }
@@ -94,7 +94,7 @@ class Calculator {
        this.currentValue = '';
     }
 
-    getDisplayNumber(number) {
+    getDisplay(number) {
         const floatNumber = parseFloat(number);
         if(isNaN(floatNumber)) {
             return '';
@@ -103,12 +103,11 @@ class Calculator {
     }
 
     updateDisplay() {
-        this.currentElement.innerHTML = this.getDisplayNumber(this.currentValue);
+        this.currentElement.innerHTML = this.getDisplay(this.currentValue);
         if(this.operation != null) {
-            this.currentElement.innerHTML = this.operation + this.getDisplayNumber(this.prevValue);
+            this.currentElement.innerHTML = this.getDisplay(this.prevValue);
         }
     }
 }
 
 const calculator = new Calculator(currentElement);
-
