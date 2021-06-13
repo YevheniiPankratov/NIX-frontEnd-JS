@@ -104,6 +104,9 @@ class Calculator {
 
     updateDisplay() {
         this.currentElement.innerHTML = this.getDisplayNumber(this.currentValue);
+        if(this.operation != null) {
+            this.currentElement.innerHTML = this.operation + this.getDisplayNumber(this.prevValue);
+        }
     }
 }
 
